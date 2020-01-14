@@ -2,7 +2,6 @@ package com.uncodedlifestyle.moviebirthapi.controllers;
 
 import com.uncodedlifestyle.moviebirthapi.models.MovieModel;
 import com.uncodedlifestyle.moviebirthapi.models.Movies;
-import com.uncodedlifestyle.moviebirthapi.secure.Secure;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +15,6 @@ import java.util.List;
 @RequestMapping("/api")
 public class MovieController {
 
-    //private Secure secure = new Secure();
 
     @RequestMapping("/movie")
     public List<Object> getMovieBirth(@RequestParam("birth") String birth) throws Exception{
