@@ -24,6 +24,9 @@ public class MovieController {
         String release_year = "&primary_release_year=";
         String url = "https://api.themoviedb.org/3/discover/movie?api_key=" + secure.getAPI() + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
         //birthYear is only getting the year of birth, example: 2020-09-14 = 2020
+        if(birth.equals("")){
+            birth = "2020-09-14";
+        }
         String birthYear = birth.substring(0,4);
         restTemplate = new RestTemplate();
         MovieModel movies = restTemplate.getForObject(url + release_year + birthYear, MovieModel.class);
