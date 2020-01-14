@@ -4,6 +4,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+/src/main/java/com/uncodedlifestyle/moviebirthapi/secure
+/frontend
 
 ### STS ###
 .apt_generated

@@ -1,31 +1,25 @@
 package com.uncodedlifestyle.moviebirthapi.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.List;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieModel {
-    private String title;
-    private String poster_path;
-    private String overview;
-    private String release_date;
+    private List<Movies> results;
 
-    public MovieModel(String title, String poster_path, String overview, String release_date) {
-        this.title = title;
-        this.poster_path = poster_path;
-        this.overview = overview;
-        this.release_date = release_date;
+    public MovieModel(){
+
     }
 
-    public String getTitle() {
-        return title;
+    public MovieModel(List<Movies> results) {
+        this.results = results;
+
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public List<Movies> getResults() {
+        return results;
     }
 
-    public String getOverview() {
-        return overview;
-    }
-
-    public String getRelease_date() {
-        return release_date;
-    }
 }
