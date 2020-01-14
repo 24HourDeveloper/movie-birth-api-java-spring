@@ -16,13 +16,14 @@ import java.util.List;
 @RequestMapping("/api")
 public class MovieController {
 
-    private Secure secure = new Secure();
+    //private Secure secure = new Secure();
 
     @RequestMapping("/movie")
     public List<Object> getMovieBirth(@RequestParam("birth") String birth) throws Exception{
+        String key = System.getenv().get("API_KEY");
         RestTemplate restTemplate;
         String release_year = "&primary_release_year=";
-        String url = "https://api.themoviedb.org/3/discover/movie?api_key=" + secure.getAPI() + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+        String url = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
         //birthYear is only getting the year of birth, example: 2020-09-14 = 2020
         if(birth.equals("")){
             birth = "2020-09-14";
